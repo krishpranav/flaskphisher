@@ -32,3 +32,10 @@ def form():
                 print log
         f.write('\n')
     return "<script>window.location='" + REDIRECT_URL + "'</script>"
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    manager.run()
