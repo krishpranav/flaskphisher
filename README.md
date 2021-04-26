@@ -14,8 +14,8 @@ python3 -m venv env
 
 # Getting Started
 ```
-python3 -m pip install -r requirements.txt
-python3 template/app.py 'https://facebook.com/login'
+python -m pip install -r requirements.txt
+python template/app.py 'https://facebook.com/login'
 [*] Found forms:
 FORM 0 --> /session
 Form to log: 0
