@@ -17,3 +17,13 @@ def relative_root(url):
         return url + '/'
     else:
         return url[:url.rfind('/')] + '/'
+
+
+# absolute root
+def absolute_root(url):
+    if '?' in url:
+        url = url[:url.find('?')]
+    if url.count('/') == 2:
+        return url
+    else:
+        return url[:url.find('/',8)]
